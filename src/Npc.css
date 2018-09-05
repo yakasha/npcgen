@@ -1,0 +1,22 @@
+.npcblock {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+}
+
+.npcblock .fields {
+  padding: 5px;
+  vertical-align: middle;
+  text-align: right;
+  border-right: medium groove lightgray;
+  border-radius: 1px;
+}
+
+.npcblock .data {
+  padding: 5px;
+  vertical-align: middle;
+  text-align: left;
+}
+
+.npcblock select {
+  margin: 0;
+}
