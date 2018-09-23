@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import './Npc.css';
-import {SimpleNpc} from './components/SimpleNpc.js';
-import {FullNpc} from './components/FullNpc.js';
+import {SimpleNpc} from './SimpleNpc.js';
+import {FullNpc} from './FullNpc.js';
 
 class Npc extends Component {
   constructor(props) {
