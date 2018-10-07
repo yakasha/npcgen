@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import './SimpleNpc.css';
-import {Race} from './Race.js';
+import {Race,weightedDataTable as RaceData} from './Race.js';
+import wtr from '../logic/WeightedTableRoller.js';
 
 export class SimpleNpc extends Component {
   constructor(props) {
@@ -25,8 +26,13 @@ export class SimpleNpc extends Component {
   handleArchetypeChange(e) {
   }
 
+  getRandomizer(weightedTable) {
+    return new wtr(weightedTable);
+  }
+
   render() {
     const archetypeOptions = this.buildArchetypeOptionList(archetypes);
+    const race = this.state.race;
 
     return (
       <div>
@@ -40,7 +46,7 @@ export class SimpleNpc extends Component {
             </div>
           </div>
         </div>
-        <Race onRaceChange={this.handleRaceChange} />
+        <Race onRaceChange={this.handleRaceChange} wtr={this.getRandomizer(RaceData)} race={race} />
       </div>
     );
   }
@@ -68,5 +74,6 @@ SimpleNpc.propTypes = {
 };
 
 SimpleNpc.defaultProps = {
-  archetype: 'random'
+  archetype: 'random',
+  race: null
 };

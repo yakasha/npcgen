@@ -1,7 +1,7 @@
 // import React, {Component} from 'react';
 // import PropTypes from 'prop-types';
 
-export default class WeightedTableRoller {
+export default class weightedTableRoller {
   constructor(weightedTable) {
     const maxroll = Object.keys(weightedTable).reduce((acc,cur) => acc += weightedTable[cur].weight);
 
@@ -11,16 +11,21 @@ export default class WeightedTableRoller {
 
   getRandomWeightedTableEntryRoller(weightedTable,maxroll) {
     return roll => {
-      if (! Number.isInteger(roll) || roll > maxroll)
-        throw new Error('Bad roll...');
-
-      for (var entryId in weightedTable) {
-        if (roll < weightedTable[entryId].weight)
-          return entryId;
-        roll -= weightedTable[entryId].weight;
+      if (! Number.isInteger(roll)) {
+        throw new Error('Bad roll... (not a number)');
       }
 
-      throw new Error('Could not pick an entry... weird...');
+      // Move this out so we don't ever have to execute it twice?
+      // But we won't ever have to anyways because people don't roll more than once per execution
+      let runningTotal = 0;
+      for (var entryId in weightedTable) {
+        runningTotal += weightedTable[entryId].weight;
+        if (roll <= runningTotal) {
+          return entryId;
+        }
+      }
+
+      throw new Error('Bad roll... (' + roll + ' too high for max ' + runningTotal + ')');
     };
   }
 
