@@ -7,7 +7,7 @@ import wtr from '../logic/WeightedTableRoller.js';
 export class SimpleNpc extends Component {
   constructor(props) {
     super(props);
-    this.state = props;
+    this.state = {race: this.props.race, archetype: this.props.archetype};
     this.handleArchetypeChange = this.handleArchetypeChange.bind(this);
     this.handleRaceChange      = this.handleRaceChange.bind(this);
   }
@@ -21,9 +21,11 @@ export class SimpleNpc extends Component {
   }
 
   handleRaceChange(e) {
+    this.setState({race: e.target.value});
   }
 
   handleArchetypeChange(e) {
+    this.setState({archetype: e.target.value});
   }
 
   getRandomizer(weightedTable) {

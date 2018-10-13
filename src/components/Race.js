@@ -2,18 +2,16 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 export class Race extends Component {
-  constructor(props) {
-    super(props);
-    this.state   = {race: props.race};
-  }
-
   buildRaceOptionList(races) {
     const raceOptions = Object.keys(races).map(k => <option value={k} key={k}>{races[k].name}</option>);
-    if (! this.props.race) {
-      raceOptions.push(<option value="random" key={this.props.race}>Random!</option>);
+    let race = this.props.race;
+
+    if (! race) {
+      race = 'random';
+      raceOptions.push(<option value="random" key={race}>Random!</option>);
     }
 
-    return (<select name="race" value={this.props.race} onChange={this.props.onRaceChange}>
+    return (<select name="race" value={race} onChange={this.props.onRaceChange}>
       {raceOptions}
       </select>);
   }
@@ -46,7 +44,7 @@ export const weightedDataTable = {
 };
 
 Race.propTypes = {
-  race: PropTypes.oneOf(Object.keys(weightedDataTable))
+  race: PropTypes.oneOf([null,...Object.keys(weightedDataTable)])
 };
 
 Race.defaultProps = {

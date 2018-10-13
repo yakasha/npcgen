@@ -8,15 +8,10 @@ class Npc extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      generationMethod: props.generationMethod,
-      archetype:        props.archetype
+      generationMethod: props.generationMethod
     }
 
     this.handleGenerationMethodChange = this.handleGenerationMethodChange.bind(this);
-    this.handleArchetypeChange        = this.handleArchetypeChange.bind(this);
-  }
-
-  handleArchetypeChange(e) {
   }
 
   handleGenerationMethodChange(e) {
@@ -24,7 +19,7 @@ class Npc extends Component {
   }
 
   generateSimple() {
-    return (<SimpleNpc archetypeHandler={this.handleArchetypeChange} />);
+    return (<SimpleNpc />);
   }
 
   generateFull() {
