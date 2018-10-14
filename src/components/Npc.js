@@ -12,10 +12,14 @@ class Npc extends Component {
     }
 
     this.handleGenerationMethodChange = this.handleGenerationMethodChange.bind(this);
+    this.handleGenerateNpc = this.handleGenerateNpc.bind(this);
   }
 
   handleGenerationMethodChange(e) {
     this.setState({generationMethod: e.target.value});
+  }
+
+  handleGenerateNpc(e) {
   }
 
   generateSimple() {
@@ -32,24 +36,41 @@ class Npc extends Component {
       this.generateFull());
 
     return (
-      <form>
-        <div className="npcblock">
-          <div className="fields">
-            <div><label htmlFor="generationMethod">Generation Method</label></div>
-          </div>
-          <div className="data">
-            <div>
-              <select name="generationMethod" value={this.state.generationMethod}
-                onChange={this.handleGenerationMethodChange}
-              >
-                <option value="simple">Simple NPC</option>
-                <option value="full">Full NPC</option>
-              </select>
+      <div className="sitelayout">
+        <div className="form">
+          <form>
+            <div className="controlPanel">
+              <div><button className="reset">Reset Form</button></div>
+              <div><button className="save">Save Settings</button></div>
+              <div><button className="generate" onClick={this.handleGenerateNpc}>Generate NPC!</button></div>
             </div>
-          </div>
-          {generationForm}
+            <div className="npcblock">
+              <div className="fields">
+                <div><label htmlFor="generationMethod">Generation Method</label></div>
+              </div>
+              <div className="data">
+                <div>
+                  <select name="generationMethod" value={this.state.generationMethod}
+                    onChange={this.handleGenerationMethodChange}
+                  >
+                    <option value="simple">Simple NPC</option>
+                    <option value="full">Full NPC</option>
+                  </select>
+                </div>
+              </div>
+              {generationForm}
+            </div>
+          </form>
         </div>
-      </form>
+        <div className="outputArea">
+          <div className="controlPanel">
+            <div><p>Character...</p></div>
+            <div><button className="text">Plain Text</button></div>
+            <div><button className="bbcode">bbcode</button></div>
+          </div>
+          <div><textarea className="outputField" /></div>
+        </div>
+      </div>
     );
   }
 }
