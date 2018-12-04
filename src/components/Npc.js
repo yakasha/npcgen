@@ -12,28 +12,36 @@ class Npc extends Component {
     }
 
     this.handleGenerationMethodChange = this.handleGenerationMethodChange.bind(this);
-    this.handleGenerateNpc = this.handleGenerateNpc.bind(this);
+    this.handleGenerateNpc            = this.buildHandleGenerateNpc(this.state.generationMethod).bind(this);
   }
 
   handleGenerationMethodChange(e) {
     this.setState({generationMethod: e.target.value});
   }
 
-  handleGenerateNpc(e) {
+  buildHandleGenerateNpc(type) {
+    return (e) => {
+      // foreach prop in type (simple or full)
+      // if set to random, call randomizer
+      //   randomizer value can be "roll x from table y", so
+      //   randomizer returns "1 or more props" to merge, so
+      //   each field must accept "1 or more values"
+      // else skip?
+    };
   }
 
-  generateSimple() {
+  buildSimple() {
     return (<SimpleNpc />);
   }
 
-  generateFull() {
+  buildFull() {
     return (<FullNpc />);
   }
 
   render() {
     const generationForm = ((this.state.generationMethod === 'simple') ? 
-      this.generateSimple() :
-      this.generateFull());
+      this.buildSimple() :
+      this.buildFull());
 
     return (
       <div className="sitelayout">
