@@ -3,9 +3,9 @@
 
 export default class weightedTableRoller {
   constructor(weightedTable) {
-    const maxroll = this.getRandomWeightedTableEntryRoller(weightedTable);
+    const maxroll = this.getWeightedTableRoller(weightedTable);
 
-    this.randomWeightedTableEntry = this.getRandomWeightedTableEntryRoller(weightedTable,maxroll);
+    this.randomWeightedTableEntry = this.getWeightedTableRoller(weightedTable,maxroll);
     this.roller                   = this.getRoller(maxroll);
   }
 
@@ -13,7 +13,7 @@ export default class weightedTableRoller {
     return Object.keys(weightedTable).reduce((acc,cur) => acc + weightedTable[cur].weight, 0);
   }
 
-  getRandomWeightedTableEntryRoller(weightedTable,maxroll) {
+  getWeightedTableRoller(weightedTable,maxroll) {
     return roll => {
       if (! Number.isInteger(roll)) {
         throw new Error('Bad roll... (not a number)');
