@@ -3,10 +3,14 @@
 
 export default class weightedTableRoller {
   constructor(weightedTable) {
-    const maxroll = Object.keys(weightedTable).reduce((acc,cur) => acc += weightedTable[cur].weight);
+    const maxroll = this.getRandomWeightedTableEntryRoller(weightedTable);
 
     this.randomWeightedTableEntry = this.getRandomWeightedTableEntryRoller(weightedTable,maxroll);
     this.roller                   = this.getRoller(maxroll);
+  }
+
+  getMaxRoll(weightedTable) {
+    return Object.keys(weightedTable).reduce((acc,cur) => acc + weightedTable[cur].weight, 0);
   }
 
   getRandomWeightedTableEntryRoller(weightedTable,maxroll) {
