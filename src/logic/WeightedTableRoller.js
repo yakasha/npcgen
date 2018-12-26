@@ -2,12 +2,14 @@
 // import PropTypes from 'prop-types';
 
 export default class weightedTableRoller {
+    /*
   constructor(weightedTable) {
     const maxroll = this.getWeightedTableRoller(weightedTable);
 
     this.randomWeightedTableEntry = this.getWeightedTableRoller(weightedTable,maxroll);
     this.roller                   = this.getRoller(maxroll);
   }
+    */
 
   getMaxRoll(weightedTable) {
     return Object.keys(weightedTable).reduce((acc,cur) => acc + weightedTable[cur].weight, 0);

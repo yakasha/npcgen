@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import './SimpleNpc.css';
-import {Race,weightedDataTable as RaceData} from './Race.js';
+import Option from './Option.js';
+/* import {Race,weightedDataTable as RaceData} from './Race.js'; */
 import wtr from '../logic/WeightedTableRoller.js';
 
 export class SimpleNpc extends Component {
@@ -33,46 +34,46 @@ export class SimpleNpc extends Component {
   }
 
   render() {
-    const archetypeOptions = this.buildArchetypeOptionList(archetypes);
-    const race = this.state.race;
+    const race      = this.state.race;
+    const archetype = this.state.archetype;
 
     return (
       <div>
-        <div className="npcblock">
-          <div className="fields">
-            <div><label htmlFor="archetype">Archetype</label></div>
-          </div>
-          <div className="data">
-            <div>
-        {archetypeOptions}
-            </div>
-          </div>
-        </div>
-        <Race onRaceChange={this.handleRaceChange} wtr={this.getRandomizer(RaceData)} race={race} />
+        <Option onChange={this.handleArchetypeChange} choice={archetype} name="archetype" label="Archetype" wdt={ArchetypeData} />
+        <Option onChange={this.handleRaceChange} choice={race} name="race" label="Race" wdt={RaceData} />
       </div>
     );
   }
 }
 
-export const archetypes = {
-  adventurer: "Adventurer",
-  bartender:  "Bartender / Server",
-  beggar:     "Beggar",
-  commoner:   "Commoner",
-  criminal:   "Criminal",
-  geezer:     "Old Coot",
-  mercenary:  "Mercenary, Guard, Soldier",
-  merchant:   "Merchant",
-  monster:    "Monster",
-  noble:      "Noble",
-  priest:     "Priest / Shaman",
-  random:     "Random!",
-  urchin:     "Kid, Street Urchin, Punk",
-  wizard:     "Wizard"
+export const RaceData = {
+  human:    {weight: 14, name: "Human"},
+  elf:      {weight: 2,  name: "Elf"},
+  dwarf:    {weight: 1,  name: "Dwarf"},
+  halfling: {weight: 1,  name: "Halfling"},
+  halfelf:  {weight: 1,  name: "Half Elf"},
+  halforc:  {weight: 1,  name: "Half Orc"}
+};
+
+export const ArchetypeData = {
+  adventurer: {weight: 1, name: "Adventurer"},
+  bartender:  {weight: 1, name: "Bartender / Server"},
+  beggar:     {weight: 1, name: "Beggar"},
+  commoner:   {weight: 1, name: "Commoner"},
+  criminal:   {weight: 1, name: "Criminal"},
+  geezer:     {weight: 1, name: "Old Coot"},
+  mercenary:  {weight: 1, name: "Mercenary, Guard, Soldier"},
+  merchant:   {weight: 1, name: "Merchant"},
+  monster:    {weight: 1, name: "Monster"},
+  noble:      {weight: 1, name: "Noble"},
+  priest:     {weight: 1, name: "Priest / Shaman"},
+  random:     {weight: 1, name: "Random!"},
+  urchin:     {weight: 1, name: "Kid, Street Urchin, Punk"},
+  wizard:     {weight: 1, name: "Wizard"}
 };
 
 SimpleNpc.propTypes = {
-  archetype: PropTypes.oneOf(Object.keys(archetypes))
+  archetype: PropTypes.oneOf(Object.keys(ArchetypeData))
 };
 
 SimpleNpc.defaultProps = {
