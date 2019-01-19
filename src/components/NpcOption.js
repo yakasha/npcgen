@@ -1,14 +1,11 @@
 import React, { Component } from 'react';
 
-export default class Option extends Component {
+export default class NpcOption extends Component {
   buildOptionList(datatable) {
     const options = Object.keys(datatable).map(k => <option value={k} key={k}>{datatable[k].name}</option>);
     let choice = this.props.choice;
 
-    if (! datatable) {
-      choice = 'random';
-      options.push(<option value="random" key={choice}>Random!</option>);
-    }
+    options.push(<option value="random" key="random">Random!</option>);
 
     return (<select name={this.props.name} value={choice} onChange={this.props.onChange}>
       {options}
@@ -34,7 +31,3 @@ export default class Option extends Component {
     );
   }
 }
-
-Option.defaultProps = {
-  choice: null
-};
