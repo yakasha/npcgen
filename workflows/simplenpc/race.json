@@ -1,0 +1,13 @@
+{
+  "name": "Race",
+  "table": {
+    "human":    {"weight": 14, "name": "Human"},
+    "elf":      {"weight": 7,  "name": "Elf"},
+    "dwarf":    {"weight": 2,  "name": "Dwarf"},
+    "halfling": {"weight": 2,  "name": "Halfling"},
+    "halfelf":  {"weight": 2,  "name": "Half Elf"},
+    "halforc":  {"weight": 2,  "name": "Half Orc"},
+    "exotic":   {"weight": 1,  "name": "Exotic", "reference": {
+      "table": "exoticrace", "replace": true}}
+  }
+}

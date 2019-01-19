@@ -1,0 +1,27 @@
+{
+  "name": "Exotic Race",
+  "table": {
+    "oread":       {"weight": 40, "name": "Oread"},
+    "catfolk":     {"weight": 40, "name": "Catfolk"},
+    "ifrit":       {"weight": 40, "name": "Ifrit"},
+    "sylph":       {"weight": 40, "name": "Sylph"},
+    "kobold":      {"weight": 25, "name": "Kobold"},
+    "lizardfolk":  {"weight": 25, "name": "Lizardfolk"},
+    "orc":         {"weight": 25, "name": "Orc"},
+    "gnoll":       {"weight": 25, "name": "Gnoll"},
+    "grippli":     {"weight": 25, "name": "Grippli"},
+    "goblin":      {"weight": 25, "name": "Goblin"},
+    "hobgoblin":   {"weight": 25, "name": "Hobgoblin"},
+    "ratfolk":     {"weight": 25, "name": "Ratfolk"},
+    "aasimar":     {"weight": 20, "name": "Aasimar"},
+    "damphir":     {"weight": 20, "name": "Damphir"},
+    "tiefling":    {"weight": 20, "name": "Tiefling"},
+    "drow":        {"weight": 20, "name": "Drow"},
+    "duergar":     {"weight": 15, "name": "Duergar"},
+    "drownoble":   {"weight": 15, "name": "Drow Noble"},
+    "svirfneblin": {"weight": 15, "name": "Svirfneblin"},
+    "halfdemon":   {"weight": 5,  "name": "Half Demon"},
+    "halfangel":   {"weight": 5,  "name": "Half Angel"},
+    "halfgod":     {"weight": 1,  "name": "Half God"}
+  }
+}

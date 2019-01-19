@@ -1,0 +1,26 @@
+{
+  "name": "Personality",
+  "table": {
+    "none":    {"weight": 50, "name": "None"},
+    "neutral": {"weight": 15, "name": "Neutral Trait", "reference": {
+      "table": "neutral",
+      "replace": true,
+      "exclude": [],
+      "skills": {}}},
+    "light":   {"weight": 15, "name": "Lightside Trait", "reference": {
+      "table": "neutral",
+      "replace": true,
+      "exclude": [],
+      "skills": {}}},
+    "dark":    {"weight": 15, "name": "Darkside Trait", "reference": {
+      "table": "neutral",
+      "replace": true,
+      "exclude": [],
+      "skills": {}}},
+    "exotic":  {"weight": 5,  "name": "Exotic Personality Feature", "reference": {
+      "table": "neutral",
+      "replace": true,
+      "exclude": [],
+      "skills": {}}}
+  }
+}

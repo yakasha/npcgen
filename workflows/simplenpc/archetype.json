@@ -1,0 +1,18 @@
+{
+  "name": "Archetype",
+  "table": {
+    "adventurer": {"weight": 1, "name": "Adventurer"},
+    "bartender":  {"weight": 1, "name": "Bartender / Server"},
+    "beggar":     {"weight": 1, "name": "Beggar"},
+    "commoner":   {"weight": 1, "name": "Commoner"},
+    "criminal":   {"weight": 1, "name": "Criminal"},
+    "geezer":     {"weight": 1, "name": "Old Coot"},
+    "mercenary":  {"weight": 1, "name": "Mercenary, Guard, Soldier"},
+    "merchant":   {"weight": 1, "name": "Merchant"},
+    "monster":    {"weight": 1, "name": "Monster"},
+    "noble":      {"weight": 1, "name": "Noble"},
+    "priest":     {"weight": 1, "name": "Priest / Shaman"},
+    "urchin":     {"weight": 1, "name": "Kid, Street Urchin, Punk"},
+    "wizard":     {"weight": 1, "name": "Wizard"}
+  }
+}

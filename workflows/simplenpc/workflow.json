@@ -1,0 +1,5 @@
+{
+  "name": "Simple NPC",
+  "required": ["race","archetype","culture"],
+  "optional": []
+}

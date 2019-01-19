@@ -1,0 +1,13 @@
+{
+  "name": "Social Status",
+  "table": {
+    "destitute":   {"weight": 12, "name": "Destitute",         "mod": -3},
+    "poor":        {"weight": 28, "name": "Poor",              "mod": -1},
+    "comfortable": {"weight": 43, "name": "Comfortable",       "mod": 0},
+    "reroll":      {"weight": 1,  "name": "Reroll"},
+    "welltodo":    {"weight": 10, "name": "Well-to-Do",        "mod": 2},
+    "wealthy":     {"weight": 4,  "name": "Wealthy",           "mod": 4},
+    "nobility":    {"weight": 2,  "name": "Nobility",          "mod": 5},
+    "extreme":     {"weight": 0,  "name": "Extremely Wealthy", "mod": 8}
+  }
+}

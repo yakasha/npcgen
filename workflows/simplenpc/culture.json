@@ -1,0 +1,10 @@
+{
+  "name": "Culture",
+  "table": {
+    "primitive":         {"weight": 1, "name": "Primitive",          "mod": -3},
+    "nomad":             {"weight": 2, "name": "Nomad",              "mod": 0},
+    "barbarian":         {"weight": 1, "name": "Barbarian",          "mod": 2},
+    "civilized":         {"weight": 1, "name": "Civilized",          "mod": 4},
+    "civilizedDecadent": {"weight": 1, "name": "Civilized Decadent", "mod": 7}
+  }
+}
